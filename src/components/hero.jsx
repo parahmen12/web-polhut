@@ -4,7 +4,10 @@ const Hero = () => {
   return (
     <div
       className="relative bg-cover bg-no-repeat bg-center h-screen"
-      style={{ backgroundImage: "url('https://cdn1.sisiplus.co.id/media/sisiplus/asset/uploads/artikel/NNbAKKuOyVeRhsBPVAYnrzRoAjKZGJZdEvJzzZqM.jpg')" }}
+      style={{ 
+        backgroundImage: "url('https://cdn1.sisiplus.co.id/media/sisiplus/asset/uploads/artikel/NNbAKKuOyVeRhsBPVAYnrzRoAjKZGJZdEvJzzZqM.jpg')",
+        backgroundAttachment: 'fixed'
+       }}
     >
       {/* Overlay */}
       <div className="absolute inset-0 bg-black opacity-60"></div>

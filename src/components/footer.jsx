@@ -1,63 +1,76 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { FaFacebook, FaGithub, FaInstagram } from 'react-icons/fa';
 
 const Footer = () => {
+  // State untuk mengatur apakah menu informasi ditampilkan
+  const [isInfoVisible, setIsInfoVisible] = useState(false);
+
+  // Fungsi untuk mengatur tampilan menu informasi
+  const toggleInfoVisibility = () => {
+    setIsInfoVisible(!isInfoVisible);
+  };
+
   return (
-    <footer className="bg-gray-800 text-white py-8">
+    <footer className="bg-orange-300 text-gray-200 py-10">
       <div className="container mx-auto px-4">
-        <div className="flex flex-col md:flex-row justify-between items-start md:items-center">
-          {/* Logo dan Deskripsi */}
-          <div className="flex flex-col mb-6 md:mb-0">
+        {/* Footer Grid */}
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-6">
+          <div className="flex flex-col items-center mb-6 md:mb-0 md:w-1/3 text-center">
             <img
               src="https://upload.wikimedia.org/wikipedia/commons/4/4d/Lambang_Polhut.png"
               alt="Logo Polhut"
-              className="w-28 mb-2"
+              className="w-28 mb-3 transform transition duration-300 hover:scale-110"
             />
-            <p className="text-sm text-gray-400">
-              Melindungi hutan demi keberlanjutan sumber daya alam.
+            <h2 className="text-xl font-bold text-gray-800 transition duration-300 hover:text-gray-600">
+              Polisi Kehutanan Indonesia
+            </h2>
+            <p className="text-sm text-gray-900 leading-relaxed max-w-sm mt-2">
+              Melindungi hutan demi keberlanjutan sumber daya alam. Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi eius debitis quibusdam. Facere, excepturi! Adipisci eos, earum sunt exercitationem pariatur et veniam suscipit, eligendi nulla molestias delectus fuga cumque laudantium!.
             </p>
           </div>
 
-          {/* Navigasi */}
-          <div className="mb-6 md:mb-0">
-            <h3 className="font-semibold mb-2">Informasi</h3>
-            <ul className="text-gray-400 space-y-1">
-              <li><a href="#home" className="hover:text-white">Home</a></li>
-              <li><a href="#forrestTeam" className="hover:text-white">Team Kami</a></li>
-              <li><a href="#forrestNews" className="hover:text-white">Berita</a></li>
-              <li><a href="#forrestActivities" className="hover:text-white">Kegiatan</a></li>
-            </ul>
+          {/* Navigation Links */}
+          <div className="md:mt-20 md:w-1/3">
+            <h3 className="text-lg font-semibold text-gray-900 mb-3 cursor-pointer" onClick={toggleInfoVisibility}>
+              Informasi
+            </h3>
+            {/* Menampilkan daftar navigasi hanya jika isInfoVisible adalah true */}
+            {isInfoVisible && (
+              <ul className="space-y-2 text-gray-800 transition-all duration-300 ease-in-out">
+                <li><a href="#home" className="hover:text-green-600 transition">Home</a></li>
+                <li><a href="#forrestTeam" className="hover:text-green-600 transition">Team Kami</a></li>
+                <li><a href="#forrestNews" className="hover:text-green-600 transition">Berita</a></li>
+                <li><a href="#forrestActivities" className="hover:text-green-600 transition">Kegiatan</a></li>
+              </ul>
+            )}
+          </div>
+
+          {/* Social Media Links */}
+          <div className="md:w-1/3">
+            <h3 className="text-lg font-semibold text-gray-800 mb-3">Ikuti Kami</h3>
+            <div className="flex space-x-4">
+              <a href="https://www.facebook.com/prmnh/" className="text-gray-800 hover:text-blue-500 transition duration-300">
+                <FaFacebook size={24} />
+              </a>
+              <a href="https://github.com/parahmen12" className="text-gray-800 hover:text-blue-400 transition duration-300">
+                <FaGithub size={24} />
+              </a>
+              <a href="https://www.instagram.com/rzvnptr/" className="text-gray-800 hover:text-pink-400 transition duration-300">
+                <FaInstagram size={24} />
+              </a>
+            </div>
           </div>
         </div>
 
-        {/* Garis Batas */}
-        <hr className="my-4 border-gray-600" />
+        {/* Divider */}
+        <hr className="my-6 border-gray-700" />
 
-        {/* Media Sosial */}
-        <div className="mb-6">
-          <h3 className="font-semibold mb-2">Media Sosial</h3>
-          <ul className="flex space-x-4 text-gray-400">
-            <li><a href="https://www.facebook.com/prmnh/" className="hover:text-blue-400">Facebook</a></li>
-            <li><a href="#" className="hover:text-blue-400">Twitter</a></li>
-            <li><a href="https://www.instagram.com/rzvnptr/" className="hover:text-pink-400">Instagram</a></li>
-          </ul>
+        {/* Copyright */}
+        <div className="text-center text-gray-800 text-sm mt-4">
+          &copy; {new Date().getFullYear()} Polisi Kehutanan. All Right Reserved.
         </div>
-
-        {/* Peta Area Pusat */}
-        <div className="w-full md:w-1/3">
-          <h3 className="font-semibold mb-2">Peta Area Pusat</h3>
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3151.835434509684!2d144.95373631531696!3d-37.81627997975157!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad642af0f2cb6ef%3A0x5045675218ceed3!2sCBD%20Melbourne!5e0!3m2!1sen!2sau!4v1631289326413!5m2!1sen!2sau"
-            width="100%"
-            height="150"
-            style={{ border: 0 }}
-            allowFullScreen=""
-            loading="lazy"
-            title="Peta Area Pusat"
-          ></iframe>
-        </div>
-
-        <div className="text-center text-gray-400 mt-4 border-t border-gray-700 pt-4">
-          &copy; {new Date().getFullYear()} Polisi Hutan. Semua Hak Dilindungi.
+        <div className="text-center text-gray-600 text-sm mt-1">
+          Muhamad Rezvan Putra Pratama
         </div>
       </div>
     </footer>

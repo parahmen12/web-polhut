@@ -37,24 +37,5 @@
     animation: fade-in 1s ease-out;
   }
   
-  /* Animasi marquee */
-.marquee {
-  display: flex;
-  overflow: hidden;
-  white-space: nowrap;
-  margin: 0 auto;
-}
-
-.marquee-content {
-  display: flex;
-  animation: marquee-animation 15s linear infinite;
-}
-
-@keyframes marquee-animation {
-  0% {
-    transform: translateX(100%);
-  }
-  100% {
-    transform: translateX(-100%);
-  }
-}
+  
+  

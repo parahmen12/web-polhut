@@ -16,7 +16,6 @@ const ForrestContact = () => {
     });
   };
 
-  // Fungsi untuk mengirim pesan ke WhatsApp
   const handleSubmit = (e) => {
     e.preventDefault();
     const { name, email, message } = formData;
@@ -31,11 +30,12 @@ const ForrestContact = () => {
   return (
     <section
       id="forrestContact"
-      className="py-10 overflow-hidden relative"
+      className="py-10 overflow-hidden relative mx-5 md:mx-20 rounded-3xl"
       style={{
         backgroundImage: "url('https://img.okezone.com/content/2017/11/17/337/1816107/kenali-5-jenis-hutan-di-indonesia-rPsDew58IM.jpg')",
         backgroundSize: 'cover',
         backgroundPosition: 'center',
+        backgroundAttachment: 'fixed'
       }}
     >
       <div className="absolute inset-0 bg-black opacity-50"></div>
@@ -43,7 +43,7 @@ const ForrestContact = () => {
       <div className="container mx-auto px-4 md:px-20 relative z-10 flex flex-col md:flex-row items-center md:items-start">
         
         {/* Form Kontak - di sebelah kiri */}
-        <div className="bg-white bg-opacity-90 p-6 rounded-lg shadow-lg w-full md:w-1/2 lg:w-1/3 md:mr-8">
+        <div className="bg-white bg-opacity-90 p-6 rounded-lg shadow-lg w-full md:w-1/2 lg:w-1/3 md:mr-8 mb-8 md:mb-0">
           <form onSubmit={handleSubmit}>
             <h2 className="text-2xl font-semibold text-gray-700 mb-4 text-center">Hubungi Kami</h2>
             
@@ -102,10 +102,10 @@ const ForrestContact = () => {
         </div>
 
         {/* Teks judul dan subjudul - di sebelah kanan */}
-        <div className="text-white mt-8 md:mt-40 md:ml-60 w-full md:w-1/2 lg:w-1/3 flex flex-col justify-center items-end text-right">
+        <div className="text-white mt-8 md:mt-36 w-full md:w-1/2 lg:w-1/3 flex flex-col justify-center items-center md:items-end text-center md:text-right md:mx-40">
           <h2 className="text-3xl font-semibold mb-4">Hubungi Tim Polisi Kehutanan</h2>
           <p className="text-gray-200 text-lg leading-relaxed max-w-xs">
-            Kami siap membantu menjawab pertanyaan atau memberikan informasi lebih lanjut mengenai upaya pelestarian hutan. Jangan ragu untuk menghubungi kami melalui form di samping ini.
+            Kami siap membantu menjawab pertanyaan atau memberikan informasi lebih lanjut mengenai upaya pelestarian hutan. Jangan ragu untuk menghubungi kami melalui form ini.
           </p>
         </div>
         
